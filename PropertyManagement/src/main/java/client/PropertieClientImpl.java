@@ -16,6 +16,8 @@ import proto.UpdatePropertieRequest;
 import proto.UpdatePropertieResponse;
 import util.CONNECTION;
 
+import java.util.List;
+
 public class PropertieClientImpl {
 
 	private PropertieServiceGrpc.PropertieServiceBlockingStub propertieClient ;
@@ -61,13 +63,14 @@ public class PropertieClientImpl {
 		System.out.println("Deleted Propertie the id '"+id+"'! ");
 	}
 	
-	public void listAllPropertie() {
+	public List<Propertie> listAllPropertie() {
 		
 		ListAllPropertieResponse propertieList = propertieClient
 				.listAllPropertie(ListAllPropertieRequest.newBuilder().build());
 		
 		System.out.println("List of Propertie: ");
 		System.out.println(propertieList.getPropertieList());
+		return propertieList.getPropertieList();
 	}
 
 }
