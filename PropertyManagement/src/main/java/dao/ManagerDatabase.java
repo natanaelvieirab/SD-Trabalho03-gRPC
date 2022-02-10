@@ -67,8 +67,8 @@ public class ManagerDatabase {
 					.setValue(value)
 					.build();
 		
-		database.put(identifier, propertie);
-		identifier++;
+		database.put(id , propertie);
+		
 			
 		return propertie;
 			

@@ -48,7 +48,7 @@ public class ProperteServiceImpl extends PropertieServiceGrpc.PropertieServiceIm
 			responseObserver.onError(Status.NOT_FOUND.asRuntimeException());
 		}
 		
-		propertie = database.insertPropertie( request.getPropertie());		
+		propertie = database.updatePropertie( request.getPropertie());		
 		
 		UpdatePropertieResponse response = UpdatePropertieResponse.newBuilder().setPropertie(propertie).build();
 		
