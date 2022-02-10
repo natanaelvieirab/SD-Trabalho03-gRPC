@@ -137,24 +137,32 @@ private static final long serialVersionUID = 0L;
   public enum Type
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>HOUSE = 0;</code>
+     * <code>NONE = 0;</code>
      */
-    HOUSE(0),
+    NONE(0),
     /**
-     * <code>APARTMENT = 1;</code>
+     * <code>HOUSE = 1;</code>
      */
-    APARTMENT(1),
+    HOUSE(1),
+    /**
+     * <code>APARTMENT = 2;</code>
+     */
+    APARTMENT(2),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>HOUSE = 0;</code>
+     * <code>NONE = 0;</code>
      */
-    public static final int HOUSE_VALUE = 0;
+    public static final int NONE_VALUE = 0;
     /**
-     * <code>APARTMENT = 1;</code>
+     * <code>HOUSE = 1;</code>
      */
-    public static final int APARTMENT_VALUE = 1;
+    public static final int HOUSE_VALUE = 1;
+    /**
+     * <code>APARTMENT = 2;</code>
+     */
+    public static final int APARTMENT_VALUE = 2;
 
 
     public final int getNumber() {
@@ -181,8 +189,9 @@ private static final long serialVersionUID = 0L;
      */
     public static Type forNumber(int value) {
       switch (value) {
-        case 0: return HOUSE;
-        case 1: return APARTMENT;
+        case 0: return NONE;
+        case 1: return HOUSE;
+        case 2: return APARTMENT;
         default: return null;
       }
     }
@@ -424,7 +433,7 @@ private static final long serialVersionUID = 0L;
     if (value_ != 0D) {
       output.writeDouble(8, value_);
     }
-    if (type_ != proto.Propertie.Type.HOUSE.getNumber()) {
+    if (type_ != proto.Propertie.Type.NONE.getNumber()) {
       output.writeEnum(9, type_);
     }
     unknownFields.writeTo(output);
@@ -466,7 +475,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(8, value_);
     }
-    if (type_ != proto.Propertie.Type.HOUSE.getNumber()) {
+    if (type_ != proto.Propertie.Type.NONE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(9, type_);
     }

@@ -14,8 +14,9 @@ message Propertie {
 	int32 landArea = 7;
 	double value = 8;
 	enum Type {
-		HOUSE = 0;
-		APARTMENT = 1;
+		NONE = 0;
+		HOUSE = 1;
+		APARTMENT = 2;
 	}	
 	
 	Type type = 9;
