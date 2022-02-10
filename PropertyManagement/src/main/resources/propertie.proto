@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package proto;
+
+option java_multiple_files = true;
+
+message Propertie {
+	int32 id = 1;
+	string title = 2;
+	string address = 3;
+	int32 numberBedroom = 4;
+	int32 numberGarage = 5;
+	int32 buildingArea = 6;
+	int32 landArea = 7;
+	double value = 8;	
+}
+
+message CreatePropertieRequest {
+	Propertie propertie = 1;
+}
+
+message CreatePropertieResponse {
+	Propertie propertie = 1;
+}
+
+message UpdatePropertieRequest {
+	Propertie propertie = 1;
+}
+
+message UpdatePropertieResponse {
+	Propertie propertie = 1;
+}
+
+message GetPropertieRequest {
+	int32 propertieId = 1;
+}
+
+message GetPropertieResponse {
+	Propertie propertie = 1;
+}
+
+message DeletePropertieRequest {
+	int32 propertieId = 1;
+}
+
+message DeletePropertieResponse {
+	int32 propertieId = 1;
+}
+
+message ListAllPropertieRequest {
+	
+}
+
+message ListAllPropertieResponse {
+	repeated Propertie propertie = 1;
+}
+
+service PropertieService {
+	rpc CreatePropertie(CreatePropertieRequest) returns (CreatePropertieResponse);
+    rpc DeletePropertie(DeletePropertieRequest) returns (DeletePropertieResponse);
+    rpc GetPropertie(GetPropertieRequest) returns (GetPropertieResponse);
+    rpc ListAllPropertie(ListAllPropertieRequest) returns (ListAllPropertieResponse);
+    rpc UpdatePropertie(UpdatePropertieRequest) returns (UpdatePropertieResponse);
+
+}
