@@ -78,36 +78,37 @@ public final class PropertieOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017propertie.proto\022\005proto\"\233\001\n\tPropertie\022\n" +
+      "\n\017propertie.proto\022\005proto\"\342\001\n\tPropertie\022\n" +
       "\n\002id\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\017\n\007address\030\003 \001" +
       "(\t\022\025\n\rnumberBedroom\030\004 \001(\005\022\024\n\014numberGarag" +
       "e\030\005 \001(\005\022\024\n\014buildingArea\030\006 \001(\005\022\020\n\010landAre" +
-      "a\030\007 \001(\005\022\r\n\005value\030\010 \001(\001\"=\n\026CreateProperti" +
-      "eRequest\022#\n\tpropertie\030\001 \001(\0132\020.proto.Prop" +
-      "ertie\">\n\027CreatePropertieResponse\022#\n\tprop" +
-      "ertie\030\001 \001(\0132\020.proto.Propertie\"=\n\026UpdateP" +
-      "ropertieRequest\022#\n\tpropertie\030\001 \001(\0132\020.pro" +
-      "to.Propertie\">\n\027UpdatePropertieResponse\022" +
-      "#\n\tpropertie\030\001 \001(\0132\020.proto.Propertie\"*\n\023" +
-      "GetPropertieRequest\022\023\n\013propertieId\030\001 \001(\005" +
-      "\";\n\024GetPropertieResponse\022#\n\tpropertie\030\001 " +
-      "\001(\0132\020.proto.Propertie\"-\n\026DeletePropertie" +
-      "Request\022\023\n\013propertieId\030\001 \001(\005\".\n\027DeletePr" +
-      "opertieResponse\022\023\n\013propertieId\030\001 \001(\005\"\031\n\027" +
-      "ListAllPropertieRequest\"?\n\030ListAllProper" +
-      "tieResponse\022#\n\tpropertie\030\001 \003(\0132\020.proto.P" +
-      "ropertie2\246\003\n\020PropertieService\022P\n\017CreateP" +
-      "ropertie\022\035.proto.CreatePropertieRequest\032" +
-      "\036.proto.CreatePropertieResponse\022P\n\017Delet" +
-      "ePropertie\022\035.proto.DeletePropertieReques" +
-      "t\032\036.proto.DeletePropertieResponse\022G\n\014Get" +
-      "Propertie\022\032.proto.GetPropertieRequest\032\033." +
-      "proto.GetPropertieResponse\022S\n\020ListAllPro" +
-      "pertie\022\036.proto.ListAllPropertieRequest\032\037" +
-      ".proto.ListAllPropertieResponse\022P\n\017Updat" +
-      "ePropertie\022\035.proto.UpdatePropertieReques" +
-      "t\032\036.proto.UpdatePropertieResponseB\002P\001b\006p" +
-      "roto3"
+      "a\030\007 \001(\005\022\r\n\005value\030\010 \001(\001\022#\n\004type\030\t \001(\0162\025.p" +
+      "roto.Propertie.Type\" \n\004Type\022\t\n\005HOUSE\020\000\022\r" +
+      "\n\tAPARTMENT\020\001\"=\n\026CreatePropertieRequest\022" +
+      "#\n\tpropertie\030\001 \001(\0132\020.proto.Propertie\">\n\027" +
+      "CreatePropertieResponse\022#\n\tpropertie\030\001 \001" +
+      "(\0132\020.proto.Propertie\"=\n\026UpdatePropertieR" +
+      "equest\022#\n\tpropertie\030\001 \001(\0132\020.proto.Proper" +
+      "tie\">\n\027UpdatePropertieResponse\022#\n\tproper" +
+      "tie\030\001 \001(\0132\020.proto.Propertie\"*\n\023GetProper" +
+      "tieRequest\022\023\n\013propertieId\030\001 \001(\005\";\n\024GetPr" +
+      "opertieResponse\022#\n\tpropertie\030\001 \001(\0132\020.pro" +
+      "to.Propertie\"-\n\026DeletePropertieRequest\022\023" +
+      "\n\013propertieId\030\001 \001(\005\".\n\027DeletePropertieRe" +
+      "sponse\022\023\n\013propertieId\030\001 \001(\005\"\031\n\027ListAllPr" +
+      "opertieRequest\"?\n\030ListAllPropertieRespon" +
+      "se\022#\n\tpropertie\030\001 \003(\0132\020.proto.Propertie2" +
+      "\246\003\n\020PropertieService\022P\n\017CreatePropertie\022" +
+      "\035.proto.CreatePropertieRequest\032\036.proto.C" +
+      "reatePropertieResponse\022P\n\017DeleteProperti" +
+      "e\022\035.proto.DeletePropertieRequest\032\036.proto" +
+      ".DeletePropertieResponse\022G\n\014GetPropertie" +
+      "\022\032.proto.GetPropertieRequest\032\033.proto.Get" +
+      "PropertieResponse\022S\n\020ListAllPropertie\022\036." +
+      "proto.ListAllPropertieRequest\032\037.proto.Li" +
+      "stAllPropertieResponse\022P\n\017UpdateProperti" +
+      "e\022\035.proto.UpdatePropertieRequest\032\036.proto" +
+      ".UpdatePropertieResponseB\002P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -118,7 +119,7 @@ public final class PropertieOuterClass {
     internal_static_proto_Propertie_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Propertie_descriptor,
-        new java.lang.String[] { "Id", "Title", "Address", "NumberBedroom", "NumberGarage", "BuildingArea", "LandArea", "Value", });
+        new java.lang.String[] { "Id", "Title", "Address", "NumberBedroom", "NumberGarage", "BuildingArea", "LandArea", "Value", "Type", });
     internal_static_proto_CreatePropertieRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_CreatePropertieRequest_fieldAccessorTable = new

@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+
 import proto.Propertie;
 
 public class ManagerDatabase {
@@ -31,6 +32,7 @@ public class ManagerDatabase {
 					.setId(id)
 					.setTitle(title)
 					.setAddress(address)
+					.setType(propertie.getType())
 					.setNumberBedroom(numberBedroom)
 					.setNumberGarage(numberGarage)
 					.setLandArea(landArea)
@@ -57,6 +59,7 @@ public class ManagerDatabase {
 		propertie  = propertie.toBuilder()
 					.setId(id)
 					.setTitle(title)
+					.setType(propertie.getType())
 					.setAddress(address)
 					.setNumberBedroom(numberBedroom)
 					.setNumberGarage(numberGarage)

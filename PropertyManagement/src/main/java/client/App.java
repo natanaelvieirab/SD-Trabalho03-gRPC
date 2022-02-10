@@ -7,9 +7,14 @@ public class App {
 	public static void main(String[] args) {
 		PropertieClientImpl client = new PropertieClientImpl();
 		
+		// Usando o ENUM :
+		// Propertie.Type.HOUSE = Casa
+		// Propertie.Type.APARTAMENT
+		
 		Propertie propertie  = Propertie.newBuilder()				
 				.setTitle("Casa do Chico")
 				.setAddress("Rua das flores")
+				.setType(Propertie.Type.HOUSE)
 				.setNumberBedroom(2)
 				.setNumberGarage(1)
 				.setLandArea(150)
@@ -19,6 +24,7 @@ public class App {
 		Propertie propertie2  = Propertie.newBuilder()				
 				.setTitle("joão perdido")
 				.setAddress("Rua das marianas")
+				.setType(Propertie.Type.APARTMENT)
 				.setNumberBedroom(4)
 				.setNumberGarage(0)
 				.setLandArea(100)
@@ -39,6 +45,7 @@ public class App {
 				.setId(2)
 				.setTitle("joao perdido de novo")
 				.setAddress("Rua das marianas2222")
+				.setType(Propertie.Type.HOUSE)
 				.setNumberBedroom(2)
 				.setNumberGarage(1)
 				.setLandArea(200)

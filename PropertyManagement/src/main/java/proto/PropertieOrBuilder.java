@@ -66,4 +66,15 @@ public interface PropertieOrBuilder extends
    * @return The value.
    */
   double getValue();
+
+  /**
+   * <code>.proto.Propertie.Type type = 9;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   * <code>.proto.Propertie.Type type = 9;</code>
+   * @return The type.
+   */
+  proto.Propertie.Type getType();
 }

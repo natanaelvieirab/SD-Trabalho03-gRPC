@@ -6,13 +6,19 @@ option java_multiple_files = true;
 
 message Propertie {
 	int32 id = 1;
-	string title = 2;
+	string title = 2;	
 	string address = 3;
 	int32 numberBedroom = 4;
 	int32 numberGarage = 5;
 	int32 buildingArea = 6;
 	int32 landArea = 7;
-	double value = 8;	
+	double value = 8;
+	enum Type {
+		HOUSE = 0;
+		APARTMENT = 1;
+	}	
+	
+	Type type = 9;
 }
 
 message CreatePropertieRequest {

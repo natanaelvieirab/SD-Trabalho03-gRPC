@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private Propertie() {
     title_ = "";
     address_ = "";
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -92,6 +93,12 @@ private static final long serialVersionUID = 0L;
             value_ = input.readDouble();
             break;
           }
+          case 72: {
+            int rawValue = input.readEnum();
+
+            type_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -122,6 +129,110 @@ private static final long serialVersionUID = 0L;
     return proto.PropertieOuterClass.internal_static_proto_Propertie_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             proto.Propertie.class, proto.Propertie.Builder.class);
+  }
+
+  /**
+   * Protobuf enum {@code proto.Propertie.Type}
+   */
+  public enum Type
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>HOUSE = 0;</code>
+     */
+    HOUSE(0),
+    /**
+     * <code>APARTMENT = 1;</code>
+     */
+    APARTMENT(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>HOUSE = 0;</code>
+     */
+    public static final int HOUSE_VALUE = 0;
+    /**
+     * <code>APARTMENT = 1;</code>
+     */
+    public static final int APARTMENT_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0: return HOUSE;
+        case 1: return APARTMENT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Type> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+            public Type findValueByNumber(int number) {
+              return Type.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return proto.Propertie.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:proto.Propertie.Type)
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -256,6 +367,25 @@ private static final long serialVersionUID = 0L;
     return value_;
   }
 
+  public static final int TYPE_FIELD_NUMBER = 9;
+  private int type_;
+  /**
+   * <code>.proto.Propertie.Type type = 9;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  public int getTypeValue() {
+    return type_;
+  }
+  /**
+   * <code>.proto.Propertie.Type type = 9;</code>
+   * @return The type.
+   */
+  public proto.Propertie.Type getType() {
+    @SuppressWarnings("deprecation")
+    proto.Propertie.Type result = proto.Propertie.Type.valueOf(type_);
+    return result == null ? proto.Propertie.Type.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -293,6 +423,9 @@ private static final long serialVersionUID = 0L;
     }
     if (value_ != 0D) {
       output.writeDouble(8, value_);
+    }
+    if (type_ != proto.Propertie.Type.HOUSE.getNumber()) {
+      output.writeEnum(9, type_);
     }
     unknownFields.writeTo(output);
   }
@@ -333,6 +466,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(8, value_);
     }
+    if (type_ != proto.Propertie.Type.HOUSE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(9, type_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -365,6 +502,7 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Double.doubleToLongBits(getValue())
         != java.lang.Double.doubleToLongBits(
             other.getValue())) return false;
+    if (type_ != other.type_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -393,6 +531,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getValue()));
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -542,6 +682,8 @@ private static final long serialVersionUID = 0L;
 
       value_ = 0D;
 
+      type_ = 0;
+
       return this;
     }
 
@@ -576,6 +718,7 @@ private static final long serialVersionUID = 0L;
       result.buildingArea_ = buildingArea_;
       result.landArea_ = landArea_;
       result.value_ = value_;
+      result.type_ = type_;
       onBuilt();
       return result;
     }
@@ -649,6 +792,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getValue() != 0D) {
         setValue(other.getValue());
+      }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1007,6 +1153,58 @@ private static final long serialVersionUID = 0L;
     public Builder clearValue() {
       
       value_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     * <code>.proto.Propertie.Type type = 9;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.proto.Propertie.Type type = 9;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.proto.Propertie.Type type = 9;</code>
+     * @return The type.
+     */
+    public proto.Propertie.Type getType() {
+      @SuppressWarnings("deprecation")
+      proto.Propertie.Type result = proto.Propertie.Type.valueOf(type_);
+      return result == null ? proto.Propertie.Type.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.proto.Propertie.Type type = 9;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(proto.Propertie.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.proto.Propertie.Type type = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type_ = 0;
       onChanged();
       return this;
     }
